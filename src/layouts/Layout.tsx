@@ -6,11 +6,11 @@ export default function Layout() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        navigate("/administrator/mainPanel")
-    })
+        navigate("/administrator/მთავარი პანელი")
+    }, [])
 
     return (
-        <div>
+        <div className="w-[100%] min-h-[100vh] h-[100%] bg-[rgba(248,231,243,1)]">
             <Outlet />
         </div>
     )

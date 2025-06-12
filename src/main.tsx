@@ -12,7 +12,7 @@ const router = createBrowserRouter([
     children: [
       {
         element: <AdminMainPanel />,
-        path: "/administrator/mainPanel"
+        path: "/administrator/:panel"
       }
     ]
   }

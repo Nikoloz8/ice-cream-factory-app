@@ -7,6 +7,7 @@ import AdminLayout from './layouts/AdminLayout'
 import AdminMainPanel from './pages/AdminPanels/AdminMainPanel'
 import RoleManagment from './pages/AdminPanels/RoleManagment'
 import SystemParameters from './pages/AdminPanels/SystemParameters'
+import Statistics from './pages/AdminPanels/Statistics'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         element: <SystemParameters />,
         path: "/administrator/სისტემის პარამეტრები"
+      },
+      {
+        element: <Statistics />,
+        path: "/administrator/ანგარიშგება & სტატისტიკა"
       },
     ]
   }

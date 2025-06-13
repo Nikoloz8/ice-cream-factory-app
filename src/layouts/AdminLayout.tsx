@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { Outlet, useNavigate } from "react-router-dom"
-import Header from "../components/AdminPanel/Header"
-import Navigation from "../components/AdminPanel/Navigation"
+import Header from "../components/AdminLayout/Header"
+import Navigation from "../components/AdminLayout/Navigation"
 
 export default function AdminLayout() {
 

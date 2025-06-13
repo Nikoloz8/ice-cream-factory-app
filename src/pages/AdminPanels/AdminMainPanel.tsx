@@ -1,6 +1,5 @@
-import DeliveredOrders from "../../components/AdminLayout/DeliveredOrders"
-import TotalProduced from "../../components/AdminLayout/TotalProduced"
-import TotalSales from "../../components/AdminLayout/TotalSales"
+import InfoCard from "../../components/AdminLayout/InfoCard"
+
 
 export default function AdminMainPanel() {
 
@@ -10,16 +9,16 @@ export default function AdminMainPanel() {
       <div className="flex gap-[24px] mt-[48px]">
         <div className="flex gap-[16px] flex-col w-[318px]">
 
-          <TotalSales />
+          <InfoCard title="საერთო გაყიდვები" value={<>₾12,500 - <span className="font-[400]! text-[rgba(255,255,255,0.7)]">მიმდინარე თვე</span></>} description="*+8% წინა თვესთან შედარებით" />
 
           <div className="flex flex-col gap-[16px] w-[246px]">
 
-            <TotalProduced />
+            <InfoCard title="წარმოებული" value="15 000 ნაყინი" description="2% დაგვიანება" />
 
           </div>
           <div className="flex flex-col gap-[16px] w-[259px]">
 
-            <DeliveredOrders />
+            <InfoCard title="მიწოდებული შეკვეთები" value={<>132 - <span className="font-[400]! text-[rgba(255,255,255,0.7)]">მიმდინარე თვე</span></>} description={<><span className="font-[900]! text-[rgba(255,255,255,1)]">118 -</span> წინა თვე</>} />
 
           </div>
         </div>

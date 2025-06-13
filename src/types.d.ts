@@ -16,3 +16,8 @@ type TFormFunctions = {
     watch: UseFormWatch<TRegisterOrLogin>
     reset: UseFormReset<TRegisterOrLogin>
 }
+
+type TTextContent = {
+    title: string
+    value: string
+}

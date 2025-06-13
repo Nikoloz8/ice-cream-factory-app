@@ -9,6 +9,7 @@ import RoleManagment from './pages/AdminPanels/RoleManagment'
 import SystemParameters from './pages/AdminPanels/SystemParameters'
 import Statistics from './pages/AdminPanels/Statistics'
 import OrderManagment from './pages/AdminPanels/OrderManagment'
+import IngredientsManagment from './pages/AdminPanels/IngredientsManagment'
 
 const router = createBrowserRouter([
   {
@@ -30,9 +31,14 @@ const router = createBrowserRouter([
       {
         element: <Statistics />,
         path: "/administrator/ანგარიშგება & სტატისტიკა"
-      }, {
-        element: <OrderManagment/>,
+      },
+      {
+        element: <OrderManagment />,
         path: "/administrator/შეკვეთების მართვა"
+      },
+      {
+        element: <IngredientsManagment />,
+        path: "/administrator/ინგრედიენტების მართვა"
       }
     ]
   }

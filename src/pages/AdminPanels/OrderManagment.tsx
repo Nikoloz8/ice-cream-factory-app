@@ -43,10 +43,7 @@ export default function OrderManagment() {
                     <img src="/images/panelIcons/Vector.svg" alt="" />
                     დამატება
                 </button>
-                <button className="p-[15px_20px] rounded-[12px] border-[1px] border-solid border-[rgba(255,255,255,1)] flex items-center gap-[5px] font-[900] leading-[100%] text-[1.2rem] text-[rgba(255,255,255,1)] ">
-                    <img src="/images/panelIcons/Vector (1).svg" alt="" />
-                    ჩათი
-                </button>
+                
             </div>
         </div>
     )

@@ -12,13 +12,14 @@ export default function AdminLayout() {
     }, [])
 
     return (
-        <div className="w-[100%] min-h-[100vh] h-[100%] bg-[rgba(248,231,243,1)]">
+        <div className="w-[100%] min-h-[100vh] h-[100%] bg-[rgba(248,231,243,1)] pb-[100px]">
             <Header />
             <div className="flex gap-[37px] justify-center mt-[95px]">
 
                 <Navigation />
-            
-                <Outlet />
+                <div className="mt-[26px]">
+                    <Outlet />
+                </div>
             </div>
         </div>
     )

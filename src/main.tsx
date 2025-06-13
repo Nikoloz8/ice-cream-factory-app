@@ -12,6 +12,7 @@ import OrderManagment from './pages/AdminPanels/OrderManagment'
 import IngredientsManagment from './pages/AdminPanels/IngredientsManagment'
 import LoginRegisterLayout from './layouts/Login&RegisterLayout'
 import Register from './pages/Login&Register/Register'
+import Login from './pages/Login&Register/Login'
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         element: <Register />,
         path: "/login&register/register"
+      },
+      {
+        element: <Login />,
+        path: "/login&register/login"
       }
     ]
   }

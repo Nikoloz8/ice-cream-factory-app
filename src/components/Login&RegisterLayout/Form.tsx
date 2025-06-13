@@ -5,8 +5,8 @@ import type { TFormFunctions } from '../../types'
 
 export default function Form() {
 
-    const { register, watch, reset } = useOutletContext<TFormFunctions>()
-    
+    const { register } = useOutletContext<TFormFunctions>()
+
     return (
         <form action="" onSubmit={(e) => e.preventDefault} className="flex flex-col gap-[20px]">
             <div className="flex flex-col gap-[8px]">

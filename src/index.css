@@ -4,4 +4,15 @@
   html {
     font-size: 10px !important;
   }
+
+  @font-face {
+    font-family: 'BPG Banner Caps';
+    src: url('/fonts/bpg_banner_caps.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  body{
+    font-family: "BPG Banner Caps";
+  }
 }

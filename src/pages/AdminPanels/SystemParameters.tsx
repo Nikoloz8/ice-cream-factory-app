@@ -27,8 +27,8 @@ export default function SystemParameters() {
                     </label>
                 </div>
                 <div className="flex gap-[12px] flex-col">
-                    <h3 className="font-[700] text-[1.4rem] leading-[100%] text-[rgba(255,255,255,0.7)]">ელ. ფოსტა: <span className="font-[400]">administrator@icecream.ge</span></h3>
-                    <h3 className="font-[700] text-[1.4rem] leading-[100%] text-[rgba(255,255,255,0.7)]">პაროლი: <span className="font-[400]">************</span></h3>
+                    <h3 className="font-[700] text-[1.4rem] flex gap-[8px] leading-[100%] text-[rgba(255,255,255,0.7)]">ელ. ფოსტა: <span className="font-[400]">administrator@icecream.ge</span></h3>
+                    <h3 className="font-[700] text-[1.4rem] flex gap-[8px] leading-[100%] text-[rgba(255,255,255,0.7)]">პაროლი: <span className="font-[400] mt-[3px] block">************</span></h3>
                 </div>
             </div>
             <div className="w-[772px] p-[15px_20px_11px_20px] mt-[40px] bg-[rgba(0,21,25,1)] rounded-[6px]">

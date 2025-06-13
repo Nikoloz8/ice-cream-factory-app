@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 AdminMainPanel
-import AdminLayout from './layouts/AdminLayout'
+import ManagmentLayout from './layouts/ManagmentLayout'
 import AdminMainPanel from './pages/AdminPanels/AdminMainPanel'
 import RoleManagment from './pages/AdminPanels/RoleManagment'
 import SystemParameters from './pages/AdminPanels/SystemParameters'
@@ -13,35 +13,40 @@ import IngredientsManagment from './pages/AdminPanels/IngredientsManagment'
 import LoginRegisterLayout from './layouts/Login&RegisterLayout'
 import Register from './pages/Login&Register/Register'
 import Login from './pages/Login&Register/Login'
+import ManagerMainPanel from './pages/ManagerPanels/ManagerMainPanel'
 
 const router = createBrowserRouter([
   {
-    element: <AdminLayout />,
-    path: "/administrator",
+    element: <ManagmentLayout />,
+    path: "/roles",
     children: [
       {
         element: <AdminMainPanel />,
-        path: "/administrator/მთავარი პანელი"
+        path: "/roles/administrator/მთავარი პანელი"
       },
       {
         element: <RoleManagment />,
-        path: "/administrator/როლების მართვა"
+        path: "/roles/administrator/როლების მართვა"
       },
       {
         element: <SystemParameters />,
-        path: "/administrator/სისტემის პარამეტრები"
+        path: "/roles/administrator/სისტემის პარამეტრები"
       },
       {
         element: <Statistics />,
-        path: "/administrator/ანგარიშგება & სტატისტიკა"
+        path: "/roles/administrator/ანგარიშგება & სტატისტიკა"
       },
       {
         element: <OrderManagment />,
-        path: "/administrator/შეკვეთების მართვა"
+        path: "/roles/administrator/შეკვეთების მართვა"
       },
       {
         element: <IngredientsManagment />,
-        path: "/administrator/ინგრედიენტების მართვა"
+        path: "/roles/administrator/ინგრედიენტების მართვა"
+      },
+      {
+        element: <ManagerMainPanel />,
+        path: "/roles/manager/მთავარი"
       }
     ]
   },

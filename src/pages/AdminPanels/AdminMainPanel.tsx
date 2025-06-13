@@ -1,7 +1,8 @@
 import InfoCard from "../../components/AdminLayout/InfoCard"
-
+import IngredientsChart from "../../components/RolesComponents/IngredientsChart"
 
 export default function AdminMainPanel() {
+
 
   return (
     <div className="p-[20px] rounded-[6px] bg-[rgba(0,58,70,1)]">
@@ -22,11 +23,11 @@ export default function AdminMainPanel() {
 
           </div>
         </div>
-        <div className="flex flex-col gap-[8px] mt-[-24px]">
+        <div className="flex flex-col gap-[34px] mt-[-26px]">
           <h3 className="text-[1.4rem] font-[400] leading-[100%] text-[rgba(255,255,255,1)]">
             ინგრედიენტების ჩარტი
           </h3>
-          <div className="w-[422px] h-[288px] rounded-[6px] bg-[rgba(0,21,25,1)]"></div>
+          <IngredientsChart />
         </div>
       </div>
     </div>

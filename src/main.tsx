@@ -14,6 +14,8 @@ import LoginRegisterLayout from './layouts/Login&RegisterLayout'
 import Register from './pages/Login&Register/Register'
 import Login from './pages/Login&Register/Login'
 import ManagerMainPanel from './pages/ManagerPanels/ManagerMainPanel'
+import ProductionManager from './pages/ManagerPanels/ProductionManager'
+import UpdateStatusses from './pages/ManagerPanels/UpdateStatusses'
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,18 @@ const router = createBrowserRouter([
       {
         element: <ManagerMainPanel />,
         path: "/roles/manager/მთავარი"
+      },
+      {
+        element: <ProductionManager />,
+        path: "/roles/manager/წარმოების მართვა"
+      },
+      {
+        element: <IngredientsManagment />,
+        path: "/roles/manager/ინვეტარის მართვა"
+      },
+      {
+        element: <UpdateStatusses />,
+        path: "/roles/manager/სტატუსების განახლება"
       }
     ]
   },

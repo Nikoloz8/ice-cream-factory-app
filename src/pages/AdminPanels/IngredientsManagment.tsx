@@ -16,7 +16,7 @@ export default function IngredientsManagment() {
                         <td className="p-[14px_0_14px_21px] text-[1.2rem] font-[400] leading-[100%] text-[rgba(255,255,255,1)]">რძე</td>
                         <td className="text-center">
                             <h3 className="text-[1.1rem] font-[300] leading-[100%] text-[rgba(4,255,129,1)] bg-[rgba(0,171,85,0.3)] rounded-[35px] inline p-[5px]">საკმარისია</h3>
-                            </td>
+                        </td>
                         <td className="text-[1.4rem] text-center font-[300] leading-[100%] text-[rgba(255,255,255,0.8)]">
                             4 დღე
                         </td>
@@ -30,10 +30,6 @@ export default function IngredientsManagment() {
                 <button className="p-[16px] rounded-[12px] bg-[rgba(0,21,25,1)] text-[1.2rem] text-[rgba(255,255,255,1)] cursor-pointer font-[900] leading-[100%] flex gap-[10px] items-center">
                     <img src="/images/panelIcons/Vector.svg" alt="" />
                     დამატება
-                </button>
-                <button className="p-[15px_20px] rounded-[12px] border-[1px] border-solid border-[rgba(255,255,255,1)] flex items-center cursor-pointer gap-[5px] font-[900] leading-[100%] text-[1.2rem] text-[rgba(255,255,255,1)] ">
-                    <img src="/images/panelIcons/Vector (1).svg" alt="" />
-                    ჩათი
                 </button>
             </div>
         </div>)

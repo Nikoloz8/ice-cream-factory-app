@@ -10,6 +10,8 @@ import SystemParameters from './pages/AdminPanels/SystemParameters'
 import Statistics from './pages/AdminPanels/Statistics'
 import OrderManagment from './pages/AdminPanels/OrderManagment'
 import IngredientsManagment from './pages/AdminPanels/IngredientsManagment'
+import LoginRegisterLayout from './layouts/Login&RegisterLayout'
+import Register from './pages/Login&Register/Register'
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,16 @@ const router = createBrowserRouter([
       {
         element: <IngredientsManagment />,
         path: "/administrator/ინგრედიენტების მართვა"
+      }
+    ]
+  },
+  {
+    element: <LoginRegisterLayout />,
+    path: "/login&register",
+    children: [
+      {
+        element: <Register />,
+        path: "/login&register/register"
       }
     ]
   }

@@ -2,18 +2,24 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import AdminMainPanel from './pages/AdminMainPanel'
-import Layout from './layouts/Layout'
+AdminMainPanel
+import AdminLayout from './layouts/AdminLayout'
+import AdminMainPanel from './pages/AdminPanels/AdminMainPanel'
+import RoleManagment from './pages/AdminPanels/RoleManagment'
 
 const router = createBrowserRouter([
   {
-    element: <Layout />,
-    path: "/",
+    element: <AdminLayout />,
+    path: "/administrator",
     children: [
       {
         element: <AdminMainPanel />,
-        path: "/administrator/:panel"
-      }
+        path: "/administrator/მთავარი პანელი"
+      },
+      {
+        element: <RoleManagment />,
+        path: "/administrator/როლების მართვა"
+      },
     ]
   }
 ])

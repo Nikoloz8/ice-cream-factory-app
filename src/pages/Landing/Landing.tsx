@@ -1,16 +1,37 @@
+import { useNavigate } from "react-router-dom"
 import IceCreamCard from "../../components/Landing/IceCreamCard"
 import MissionCard from "../../components/Landing/MissionCard"
 import tailwind from "../../styles/tailwind"
+import { useState } from "react"
 
 export default function Landing() {
 
     const nav = ["ისტორია", "გაყიდვების წერტილები", "კონტაქტი"]
     const addresses = ["თბილისი, პეკინის გამზირი 20", "თბილისი, ვაჟა-ფშაველას გამზირი 45", "ბათუმი, ჭავჭავაძის ქუჩა 12", "ქუთაისი, რუსთაველის ქუჩა 87"]
+    const roles = ["მენეჯერი", "ადმინისტრატორი", "დისტრიბუტორი", "გაყიდვების გუნდი"]
 
-    const { F4 } = tailwind()
+    const returnRoleLink = (role: string) => {
+        return role === "მენეჯერი" ? "manager" : role === "ადმინისტრატორი" ? "administrator" : role === "დისტრიბუტორი" ? "distributor" : role === "გაყიდვების გუნდი" ? "sales team" : undefined
+    }
+
+    const { F4, F1 } = tailwind()
+    const navigate = useNavigate()
+
+    const [showRoleOptions, setShowRoleOptions] = useState(false)
 
     return (
-        <div className="w-[100%] h-[100%] flex flex-col items-center min-h-[100vh] bg-[rgba(248,231,243,1)]">
+        <div className="w-[100%] h-[100%] flex flex-col items-center min-h-[100vh] bg-[rgba(248,231,243,1)] relative">
+            <div className={`absolute top-[-250px] ${showRoleOptions? "top-[100px]" : ""} p-[20px] bg-[rgba(0,21,25,1)] rounded-[16px] transition-all duration-1000`}>
+                <h3 className="font-[900] text-[1.4rem] leading-[100%] text-[rgba(255,255,255,1)]">თქვენი როლი?</h3>
+                <div className="flex flex-col gap-[12px] mt-[17px]">
+                    {roles.map((e, i) => {
+                        return <button key={i} onClick={() => navigate(`/login&register/login/${returnRoleLink(e)}`)} className={`w-[311px] bg-transparent border-[1px] border-solid border-[rgba(4,174,210,1)] p-[6px_10px] rounded-[6px] text-left ${F1} font-[400]! cursor-pointer`}>
+                            {e}
+                        </button>
+                    })}
+
+                </div>
+            </div>
             <header className="flex items-center justify-center w-[100%] p-[16px_64px] bg-[rgba(0,21,25,1)] ">
                 <div className="w-[1200px] flex justify-between">
                     <div className="flex items-center gap-[12px]">
@@ -18,22 +39,22 @@ export default function Landing() {
                         <h1 className="text-[rgba(192,247,252,1)] font-[300] text-[2.1rem] leading-[100%]">გლასე</h1>
                     </div>
                     <nav className="flex items-center gap-[32px]">
-                        <a href="" className="flex font-[400] text-[1.4rem] leading-[100%] text-[rgba(248,231,243,1)] items-center">
+                        <a href="#პროდუქცია" className="flex font-[400] text-[1.4rem] leading-[100%] text-[rgba(248,231,243,1)] items-center">
                             <img src="/images/landingIcons/lets-icons_shop.svg" alt="" />
                             პროდუქცია
                         </a>
                         {nav.map((e, i) => {
-                            return <a href="" key={i} className="font-[400] text-[1.4rem] leading-[100%] text-[rgba(248,231,243,1)]">
+                            return <a href={`#${e}`} key={i} className="font-[400] text-[1.4rem] leading-[100%] text-[rgba(248,231,243,1)]">
                                 {e}
                             </a>
                         })}
-                        <button className="p-[12px_24px] cursor-pointer bg-gradient-to-b from-[#036073] to-[#05b4d9] font-[900] text-[1.4rem] leading-[100%] text-[#FFFFFF] border-[0.7px] border-solid border-[rgb(118,229,252)] rounded-[27px]">
+                        <button onClick={() => setShowRoleOptions(true)} className="p-[12px_24px] cursor-pointer bg-gradient-to-b from-[#036073] to-[#05b4d9] font-[900] text-[1.4rem] leading-[100%] text-[#FFFFFF] border-[0.7px] border-solid border-[rgb(118,229,252)] rounded-[27px]">
                             შესვლა
                         </button>
                     </nav>
                 </div>
             </header >
-            <main>
+            <main onClick={() => setShowRoleOptions(false)}>
                 <div className="w-[1200px] flex flex-col items-center">
                     <section className="flex gap-[20px] mt-[60px] items-center">
                         <div className="w-[560px] flex flex-col gap-[32px]">
@@ -54,7 +75,7 @@ export default function Landing() {
                         <MissionCard imgSrc="/images/landingIcons/Rectangle 84 (1).svg" value="ვქმნით ნაყინს, რომელიც აერთიანებს ადამიანებს და ყოველდღიურობას ტკბილ მომენტებად აქცევს." title="ჩვენი მისია" />
 
                     </section>
-                    <section className="mt-[120px] flex flex-col gap-[52px]">
+                    <section id="პროდუქცია" className="mt-[120px] flex flex-col gap-[52px]">
                         <div className="flex flex-col items-center">
                             <div className="flex flex-col gap-[26px] items-center">
                                 <h3 className="font-[700] text-[4rem] text-[rgba(209,0,157,1)] leading-[100%]">კატალოგი</h3>
@@ -76,7 +97,7 @@ export default function Landing() {
                             </div>
                         </div>
                     </section>
-                    <section className="p-[60px] flex gap-[72px] mt-[120px] items-center bg-[rgba(0,21,25,1)] rounded-[18px]">
+                    <section id="ისტორია" className="p-[60px] flex gap-[72px] mt-[120px] items-center bg-[rgba(0,21,25,1)] rounded-[18px]">
                         <div className="flex flex-col gap-[40px] max-w-[500px]">
                             <h2 className="font-[900] leading-[100%] text-[rgba(248,231,243,1)] text-[3.2rem]">
                                 <span className="text-[rgba(209,0,157,1)]">სიყვარულით </span>
@@ -90,7 +111,7 @@ export default function Landing() {
                         </div>
                         <img src="/images/landingIcons/Rectangle 84 (2).svg" alt="" />
                     </section>
-                    <section className="p-[0_60px] flex gap-[72px] mt-[120px] items-center">
+                    <section id="გაყიდვების წერტილები" className="p-[0_60px] flex gap-[72px] mt-[120px] items-center">
                         <div className="flex flex-col gap-[32px] max-w-[500px]">
                             <h2 className="text-[3.2rem] font-[900] leading-[100%] text-[rgba(4,174,210,1)]">გაყიდვების წერტილები</h2>
                             <p className="font-[400] text-[1.8rem] leading-[100%] text-[rgba(0,21,25,0.8)]">გემრიელი სიახლეები შენს ახლოს! იპოვე ჩვენი გაყიდვის წერტილები რუკაზე ან მისამართების სიაში და დატკბი შენი საყვარელი ნაყინით ნებისმიერ დროს.</p>
@@ -111,7 +132,7 @@ export default function Landing() {
                     </section>
                 </div>
             </main>
-            <footer className="bg-[rgba(0,21,25,1)] p-[30px_80px] w-[100%] mt-[129px] flex items-center justify-center">
+            <footer id="კონტაქტი" className="bg-[rgba(0,21,25,1)] p-[30px_80px] w-[100%] mt-[129px] flex items-center justify-center">
                 <div className="w-[1200px] flex flex-col">
                     <div className="flex justify-between pb-[32px] border-b-[1px] border-solid border-[rgba(255,255,255,1)]">
                         <div className="flex flex-col gap-[20px] items-start max-w-[416px]">

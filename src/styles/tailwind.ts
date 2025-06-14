@@ -9,6 +9,7 @@ export default function tailwind() {
     const credentials = "font-[700] text-[1.4rem] flex gap-[8px] leading-[100%] text-[rgba(255,255,255,0.7)]"
     const labelStyle = "flex gap-[8px] cursor-pointer"
     const inputStyle = "w-[100%] text-[1.2rem] font-[300] leading-[100%] text-[rgba(0,58,70,1)] p-[8px_16px_8px_16px] outline-none border-[1px] border-solid border-[rgba(4,174,210,1)] rounded-[5px]"
+    const inputStyle2 = `w-[387px] p-[5px_14px] rounded-[6px] bg-[rgba(0,21,25,1)] ${F1} text-[1.2rem] text-[rgba(255,255,255,0.6)] outline-none`
 
-    return { F1, F2, F3, panelSectionsDivStyle, customCheckInput, credentials, labelStyle, inputStyle, F4 }
+    return { F1, F2, F3, panelSectionsDivStyle, customCheckInput, credentials, labelStyle, inputStyle, F4, inputStyle2}
 }

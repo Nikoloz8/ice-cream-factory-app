@@ -1,4 +1,4 @@
-import type { ReactNode } from "react"
+import type { ReactNode, SetStateAction } from "react"
 
 type TInfoCard = {
     title: string
@@ -33,4 +33,9 @@ type TIceCreamCard = {
     value: string
     price: string
     imgSrc: string
+}
+
+type TAddIngredient = {
+    setShowAddIngredient: React.Dispatch<React.SetStateAction<boolean>>
+    showAddIngredient: boolean
 }

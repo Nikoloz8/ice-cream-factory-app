@@ -1,4 +1,4 @@
-import Form from "../../components/Login&RegisterLayout/Form"
+import Form from "../../components/Login&RegisterLayout/Register&LoginForm"
 import TextContent from "../../components/Login&RegisterLayout/TextContent"
 import Button from "../../components/Login&RegisterLayout/Button"
 

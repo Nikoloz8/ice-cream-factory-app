@@ -1,5 +1,5 @@
 import Button from "../../components/Login&RegisterLayout/Button";
-import Form from "../../components/Login&RegisterLayout/Form";
+import Form from "../../components/Login&RegisterLayout/Register&LoginForm";
 import TextContent from "../../components/Login&RegisterLayout/TextContent";
 
 export default function Login() {

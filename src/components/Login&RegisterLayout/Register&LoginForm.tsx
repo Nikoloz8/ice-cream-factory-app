@@ -4,7 +4,7 @@ import tailwind from '../../styles/tailwind'
 
 
 
-export default function Form() {
+export default function RegisterLoginForm() {
 
     const { register } = useOutletContext<TFormFunctions>()
     const { inputStyle, F1 } = tailwind()

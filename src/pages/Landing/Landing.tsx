@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom"
 import IceCreamCard from "../../components/Landing/IceCreamCard"
 import MissionCard from "../../components/Landing/MissionCard"
 import tailwind from "../../styles/tailwind"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import Header from "../../components/Landing/Header"
+import AdvertismentSection from "../../components/Landing/AdvertismentSection"
 
 export default function Landing() {
 
-    const nav = ["ისტორია", "გაყიდვების წერტილები", "კონტაქტი"]
     const addresses = ["თბილისი, პეკინის გამზირი 20", "თბილისი, ვაჟა-ფშაველას გამზირი 45", "ბათუმი, ჭავჭავაძის ქუჩა 12", "ქუთაისი, რუსთაველის ქუჩა 87"]
     const roles = ["მენეჯერი", "ადმინისტრატორი", "დისტრიბუტორი", "გაყიდვების გუნდი"]
 
@@ -19,9 +20,19 @@ export default function Landing() {
 
     const [showRoleOptions, setShowRoleOptions] = useState(false)
 
+    useEffect(() => {
+        const handleScroll = () => {
+            setShowRoleOptions(false);
+        }
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
+
     return (
         <div className="w-[100%] h-[100%] flex flex-col items-center min-h-[100vh] bg-[rgba(248,231,243,1)] relative">
-            <div className={`absolute top-[-250px] ${showRoleOptions? "top-[100px]" : ""} p-[20px] bg-[rgba(0,21,25,1)] rounded-[16px] transition-all duration-1000`}>
+            <div className={`absolute top-[-250px] ${showRoleOptions ? "top-[100px]" : ""} p-[20px] bg-[rgba(0,21,25,1)] rounded-[12px] transition-all duration-1000`}>
                 <h3 className="font-[900] text-[1.4rem] leading-[100%] text-[rgba(255,255,255,1)]">თქვენი როლი?</h3>
                 <div className="flex flex-col gap-[12px] mt-[17px]">
                     {roles.map((e, i) => {
@@ -32,43 +43,13 @@ export default function Landing() {
 
                 </div>
             </div>
-            <header className="flex items-center justify-center w-[100%] p-[16px_64px] bg-[rgba(0,21,25,1)] ">
-                <div className="w-[1200px] flex justify-between">
-                    <div className="flex items-center gap-[12px]">
-                        <img src="/images/landingIcons/OBJETCS.svg" alt="" />
-                        <h1 className="text-[rgba(192,247,252,1)] font-[300] text-[2.1rem] leading-[100%]">გლასე</h1>
-                    </div>
-                    <nav className="flex items-center gap-[32px]">
-                        <a href="#პროდუქცია" className="flex font-[400] text-[1.4rem] leading-[100%] text-[rgba(248,231,243,1)] items-center">
-                            <img src="/images/landingIcons/lets-icons_shop.svg" alt="" />
-                            პროდუქცია
-                        </a>
-                        {nav.map((e, i) => {
-                            return <a href={`#${e}`} key={i} className="font-[400] text-[1.4rem] leading-[100%] text-[rgba(248,231,243,1)]">
-                                {e}
-                            </a>
-                        })}
-                        <button onClick={() => setShowRoleOptions(true)} className="p-[12px_24px] cursor-pointer bg-gradient-to-b from-[#036073] to-[#05b4d9] font-[900] text-[1.4rem] leading-[100%] text-[#FFFFFF] border-[0.7px] border-solid border-[rgb(118,229,252)] rounded-[27px]">
-                            შესვლა
-                        </button>
-                    </nav>
-                </div>
-            </header >
+            <Header setShowRoleOptions={setShowRoleOptions} />
             <main onClick={() => setShowRoleOptions(false)}>
                 <div className="w-[1200px] flex flex-col items-center">
-                    <section className="flex gap-[20px] mt-[60px] items-center">
-                        <div className="w-[560px] flex flex-col gap-[32px]">
-                            <h1 className="text-[4rem] font-[300] leading-[100%] text-[rgba(0,21,25,1)]">
-                                <span className="text-[rgba(4,174,210,1)] font-[700]">ნამდვილი</span> სიამოვნება ყველა <span className="text-[rgba(209,0,157,1)] font-[700]">გემოში!</span>
-                            </h1>
-                            <div className="flex flex-col gap-[16px] w-[420px] items-start">
-                                <p className="text-[1.6rem] font-[400] text-[rgba(0,31,37,1)] leading-[100%]">ჩვენ ვქმნით ნაყინს, რომელიც არა მხოლოდ სიამოვნებას გაძლევს, არამედ თბილ ისტორიასაც მოგიყვება — ბუნებრივი ინგრედიენტებით და სიყვარულით შექმნილი.</p>
-                                <button className="p-[18.5px_26px] border-[1px] border-solid border-[rgba(4,174,210,1)] font-[900] text-[1.6rem] leading-[100%] rounded-[8px] cursor-pointer text-[rgba(4,174,210,1)]">შესვლა სისტემაში</button>
-                            </div>
-                        </div>
-                        <img src="/images/landingIcons/Group 40747.svg" alt="" />
-                    </section>
-                    <section className="p-[100px_90px] mt-[68px] bg-[rgba(0,21,25,1)] rounded-[18px] flex gap-[60px]">
+
+                    <AdvertismentSection setShowRoleOptions={setShowRoleOptions} />
+
+                    <section onClick={() => setShowRoleOptions(false)} className="p-[100px_90px] mt-[68px] bg-[rgba(0,21,25,1)] rounded-[18px] flex gap-[60px]">
 
                         <MissionCard imgSrc="/images/landingIcons/Rectangle 84.svg" value="ნატურალური ინგრედიენტები, მრავალფეროვანი გემოები და გამორჩეული ტექსტურა — ნაყინი, რომელიც სიამოვნებას მოგანიჭებთ." title="ჩვენი პროდუქცია" />
 

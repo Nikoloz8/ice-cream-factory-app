@@ -1,8 +1,13 @@
+import { useOutletContext } from "react-router-dom"
 import tailwind from "../../styles/tailwind"
+import type { TAddIngredient } from "../../types"
 
 export default function IngredientsManagment() {
 
     const {F1, F2} = tailwind()
+    const {setShowAddIngredient, showAddIngredient} = useOutletContext<TAddIngredient>()
+
+    console.log(showAddIngredient)
 
     return (
         <div className="p-[20px] rounded-[6px] bg-[rgba(0,58,70,1)]">
@@ -32,7 +37,7 @@ export default function IngredientsManagment() {
                 </tbody>
             </table>
             <div className="flex justify-between w-[100%] mt-[40px]">
-                <button className="p-[16px] rounded-[12px] bg-[rgba(0,21,25,1)] text-[1.2rem] text-[rgba(255,255,255,1)] cursor-pointer font-[900] leading-[100%] flex gap-[10px] items-center">
+                <button onClick={() => setShowAddIngredient(true)} className="p-[16px] rounded-[12px] bg-[rgba(0,21,25,1)] text-[1.2rem] text-[rgba(255,255,255,1)] cursor-pointer font-[900] leading-[100%] flex gap-[10px] items-center">
                     <img src="/images/panelIcons/Vector.svg" alt="" />
                     დამატება
                 </button>

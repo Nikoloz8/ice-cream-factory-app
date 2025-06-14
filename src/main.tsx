@@ -16,8 +16,13 @@ import Login from './pages/Login&Register/Login'
 import ManagerMainPanel from './pages/ManagerPanels/ManagerMainPanel'
 import ProductionManager from './pages/ManagerPanels/ProductionManager'
 import UpdateStatusses from './pages/ManagerPanels/UpdateStatusses'
+import Landing from './pages/Landing/Landing'
 
 const router = createBrowserRouter([
+  {
+    element: <Landing />,
+    path: '/'
+  },
   {
     element: <ManagmentLayout />,
     path: "/roles",
@@ -70,11 +75,11 @@ const router = createBrowserRouter([
     children: [
       {
         element: <Register />,
-        path: "/login&register/register"
+        path: "/login&register/register/:role"
       },
       {
         element: <Login />,
-        path: "/login&register/login"
+        path: "/login&register/login/:role"
       }
     ]
   }

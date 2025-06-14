@@ -1,12 +1,14 @@
-import InfoCard from "../../components/AdminLayout/InfoCard"
-import IngredientsChart from "../../components/RolesComponents/IngredientsChart"
+import InfoCard from "../../components/ManagmentLayout/InfoCard"
+import IngredientsChart from "../../components/ManagmentLayout/IngredientsChart"
+import tailwind from "../../styles/tailwind"
 
 export default function AdminMainPanel() {
 
+  const {F2} = tailwind()
 
   return (
     <div className="p-[20px] rounded-[6px] bg-[rgba(0,58,70,1)]">
-      <h1 className="text-[rgba(255,255,255,1)] font-[500] text-[1.8rem] leading-[100%]">მთავარი პანელი</h1>
+      <h1 className={`${F2}`}>მთავარი პანელი</h1>
       <div className="flex gap-[24px] mt-[48px]">
         <div className="flex gap-[16px] flex-col w-[318px]">
 

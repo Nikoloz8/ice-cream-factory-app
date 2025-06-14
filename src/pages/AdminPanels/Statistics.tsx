@@ -1,12 +1,15 @@
-import InfoCard from "../../components/AdminLayout/InfoCard"
+import InfoCard from "../../components/ManagmentLayout/InfoCard"
+import tailwind from "../../styles/tailwind"
 
 export default function Statistics() {
 
   const examplePopulars = ["Mango Tango", "Cookies & Cream", "Berry Mix", "Strawberry Sorbet"]
 
+  const {F2} = tailwind()
+
   return (
     <div className="p-[20px] rounded-[6px] bg-[rgba(0,58,70,1)]">
-      <h1 className="text-[rgba(255,255,255,1)] font-[500] text-[1.8rem] leading-[100%]">ანგარიშება/სტატისტიკა</h1>
+      <h1 className={`${F2}`}>ანგარიშება/სტატისტიკა</h1>
       <div className="mt-[40px] gap-[15px] flex flex-col">
         <div className="flex gap-[12px] h-[300px]">
           <div className="flex flex-col justify-between h-[100%] w-[320px]">
@@ -19,7 +22,7 @@ export default function Statistics() {
 
           </div>
           <div className="p-[18px] bg-[rgba(0,21,25,1)] rounded-[6px] h-[100%] w-[440px]">
-            <h2 className="font-[500] text-[1.8rem] leading-[100%] text-[rgba(255,255,255,1)] text-center">გაყიდვების თვიური დინამიკა</h2>
+            <h2 className={`text-center ${F2}`}>გაყიდვების თვიური დინამიკა</h2>
           </div>
         </div>
         <div className="w-[100%] p-[10px_16px_17px_10px] bg-[rgba(0,21,25,1)] rounded-[6px] ">

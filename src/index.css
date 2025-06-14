@@ -3,6 +3,7 @@
 @layer base {
   html {
     font-size: 10px !important;
+    scroll-behavior: smooth;
   }
 
   @font-face {

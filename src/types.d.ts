@@ -21,3 +21,16 @@ type TTextContent = {
     title: string
     value: string
 }
+
+type TMissionCard = {
+    title: string
+    imgSrc: string
+    value: string
+}
+
+type TIceCreamCard = {
+    title: string
+    value: string
+    price: string
+    imgSrc: string
+}

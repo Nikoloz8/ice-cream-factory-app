@@ -1,16 +1,20 @@
+import tailwind from "../../styles/tailwind"
+
 export default function OrderManagment() {
+
+    const {F1, F2} = tailwind()
 
     return (
         <div className="p-[20px] rounded-[6px] bg-[rgba(0,58,70,1)]">
-            <h1 className="text-[rgba(255,255,255,1)] font-[500] text-[1.8rem] leading-[100%]">მომხმარებლების/როლების მართვა</h1>
+            <h1 className={`${F2}`}>მომხმარებლების/როლების მართვა</h1>
             <table className="w-[767px] mt-[21px]">
                 <thead className="mt-[21px] bg-[rgba(133,133,133,0.3)] p-[14px_21px_14px_21px]">
                     <tr>
-                        <th className="p-[14px_0_14px_21px] text-[1.4rem] font-[300] leading-[100%] text-white text-left rounded-[6px_0_0_6px]!">შეკვეთის №</th>
-                        <th className="text-[1.4rem] font-[300] leading-[100%] text-white text-left">პროდუქტი</th>
-                        <th className="text-[1.4rem] font-[300] leading-[100%] text-white text-left">ვანილის ნაყინი</th>
-                        <th className=" text-[1.4rem] font-[300] leading-[100%] text-white text-left">სტატუსი</th>
-                        <th className="pr-[21px] text-[1.4rem] font-[300] leading-[100%] text-white rounded-[0_6px_6px_0]!">დეტალები</th>
+                        <th className={`p-[14px_0_14px_21px] ${F1} text-left rounded-[6px_0_0_6px]!`}>შეკვეთის №</th>
+                        <th className={`text-left ${F1}`}>პროდუქტი</th>
+                        <th className={`${F1} text-left`}>ვანილის ნაყინი</th>
+                        <th className={`${F1} text-left`}>სტატუსი</th>
+                        <th className={`pr-[21px] ${F1} rounded-[0_6px_6px_0]!`}>დეტალები</th>
                     </tr>
                 </thead>
                 <tbody>

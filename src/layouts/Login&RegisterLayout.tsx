@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Header from "../components/AdminLayout/Header";
+import Header from "../components/ManagmentLayout/Header";
 import { useForm } from "react-hook-form";
 import type { TRegisterOrLogin } from "../types";
 

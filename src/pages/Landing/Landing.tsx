@@ -7,12 +7,6 @@ import AdvertismentSection from "../../components/Landing/AdvertismentSection"
 export default function Landing() {
 
     const addresses = ["თბილისი, პეკინის გამზირი 20", "თბილისი, ვაჟა-ფშაველას გამზირი 45", "ბათუმი, ჭავჭავაძის ქუჩა 12", "ქუთაისი, რუსთაველის ქუჩა 87"]
-    
-    // const roles = ["მენეჯერი", "ადმინისტრატორი", "დისტრიბუტორი", "გაყიდვების გუნდი"]
-
-    // const returnRoleLink = (role: string) => {
-    //     return role === "მენეჯერი" ? "manager" : role === "ადმინისტრატორი" ? "administrator" : role === "დისტრიბუტორი" ? "distributor" : role === "გაყიდვების გუნდი" ? "sales team" : undefined
-    // }
 
     const { F4 } = tailwind()
 

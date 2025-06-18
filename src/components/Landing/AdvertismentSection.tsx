@@ -1,4 +1,4 @@
-export default function AdvertismentSection({ setShowRoleOptions }: { setShowRoleOptions: React.Dispatch<React.SetStateAction<boolean>> }) {
+export default function AdvertismentSection() {
     return (
         <section className="flex gap-[20px] mt-[60px] items-center">
             <div className="w-[560px] flex flex-col gap-[32px]">
@@ -7,7 +7,7 @@ export default function AdvertismentSection({ setShowRoleOptions }: { setShowRol
                 </h1>
                 <div className="flex flex-col gap-[16px] w-[420px] items-start">
                     <p className="text-[1.6rem] font-[400] text-[rgba(0,31,37,1)] leading-[100%]">ჩვენ ვქმნით ნაყინს, რომელიც არა მხოლოდ სიამოვნებას გაძლევს, არამედ თბილ ისტორიასაც მოგიყვება — ბუნებრივი ინგრედიენტებით და სიყვარულით შექმნილი.</p>
-                    <button onClick={() => setShowRoleOptions(true)} className="p-[18.5px_26px] border-[1px] border-solid border-[rgba(4,174,210,1)] font-[900] text-[1.6rem] leading-[100%] rounded-[8px] cursor-pointer text-[rgba(4,174,210,1)]">შესვლა სისტემაში</button>
+                    <button className="p-[18.5px_26px] border-[1px] border-solid border-[rgba(4,174,210,1)] font-[900] text-[1.6rem] leading-[100%] rounded-[8px] cursor-pointer text-[rgba(4,174,210,1)]">შესვლა სისტემაში</button>
                 </div>
             </div>
             <img src="/images/landingIcons/Group 40747.svg" alt="" />

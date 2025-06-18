@@ -1,6 +1,10 @@
-export default function Header({ setShowRoleOptions }: { setShowRoleOptions: React.Dispatch<React.SetStateAction<boolean>> }) {
+import { useNavigate } from "react-router-dom"
+
+export default function Header() {
 
     const nav = ["ისტორია", "გაყიდვების წერტილები", "კონტაქტი"]
+
+    const navigate = useNavigate()
 
     return (
         <header className="flex items-center justify-center w-[100%] p-[16px_64px] bg-[rgba(0,21,25,1)] ">
@@ -19,7 +23,7 @@ export default function Header({ setShowRoleOptions }: { setShowRoleOptions: Rea
                             {e}
                         </a>
                     })}
-                    <button onClick={() => setShowRoleOptions(true)} className="p-[12px_24px] cursor-pointer bg-gradient-to-b from-[#036073] to-[#05b4d9] font-[900] text-[1.4rem] leading-[100%] text-[#FFFFFF] border-[0.7px] border-solid border-[rgb(118,229,252)] rounded-[27px]">
+                    <button onClick={() => navigate("/login_register/login")} className="p-[12px_24px] cursor-pointer bg-gradient-to-b from-[#036073] to-[#05b4d9] font-[900] text-[1.4rem] leading-[100%] text-[#FFFFFF] border-[0.7px] border-solid border-[rgb(118,229,252)] rounded-[27px]">
                         შესვლა
                     </button>
                 </nav>

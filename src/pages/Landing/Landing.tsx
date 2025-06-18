@@ -1,55 +1,30 @@
-import { useNavigate } from "react-router-dom"
 import IceCreamCard from "../../components/Landing/IceCreamCard"
 import MissionCard from "../../components/Landing/MissionCard"
 import tailwind from "../../styles/tailwind"
-import { useEffect, useState } from "react"
 import Header from "../../components/Landing/Header"
 import AdvertismentSection from "../../components/Landing/AdvertismentSection"
 
 export default function Landing() {
 
     const addresses = ["თბილისი, პეკინის გამზირი 20", "თბილისი, ვაჟა-ფშაველას გამზირი 45", "ბათუმი, ჭავჭავაძის ქუჩა 12", "ქუთაისი, რუსთაველის ქუჩა 87"]
-    const roles = ["მენეჯერი", "ადმინისტრატორი", "დისტრიბუტორი", "გაყიდვების გუნდი"]
+    
+    // const roles = ["მენეჯერი", "ადმინისტრატორი", "დისტრიბუტორი", "გაყიდვების გუნდი"]
 
-    const returnRoleLink = (role: string) => {
-        return role === "მენეჯერი" ? "manager" : role === "ადმინისტრატორი" ? "administrator" : role === "დისტრიბუტორი" ? "distributor" : role === "გაყიდვების გუნდი" ? "sales team" : undefined
-    }
+    // const returnRoleLink = (role: string) => {
+    //     return role === "მენეჯერი" ? "manager" : role === "ადმინისტრატორი" ? "administrator" : role === "დისტრიბუტორი" ? "distributor" : role === "გაყიდვების გუნდი" ? "sales team" : undefined
+    // }
 
-    const { F4, F1 } = tailwind()
-    const navigate = useNavigate()
-
-    const [showRoleOptions, setShowRoleOptions] = useState(false)
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setShowRoleOptions(false);
-        }
-        window.addEventListener("scroll", handleScroll)
-        return () => {
-            window.removeEventListener("scroll", handleScroll)
-        }
-    }, [])
+    const { F4 } = tailwind()
 
     return (
         <div className="w-[100%] h-[100%] flex flex-col items-center min-h-[100vh] bg-[rgba(248,231,243,1)] relative">
-            <div className={`absolute top-[-250px] ${showRoleOptions ? "top-[100px]" : ""} p-[20px] bg-[rgba(0,21,25,1)] rounded-[12px] transition-all duration-1000`}>
-                <h3 className="font-[900] text-[1.4rem] leading-[100%] text-[rgba(255,255,255,1)]">თქვენი როლი?</h3>
-                <div className="flex flex-col gap-[12px] mt-[17px]">
-                    {roles.map((e, i) => {
-                        return <button key={i} onClick={() => navigate(`/login&register/login/${returnRoleLink(e)}`)} className={`w-[311px] bg-transparent border-[1px] border-solid border-[rgba(4,174,210,1)] p-[6px_10px] rounded-[6px] text-left ${F1} font-[400]! cursor-pointer`}>
-                            {e}
-                        </button>
-                    })}
-
-                </div>
-            </div>
-            <Header setShowRoleOptions={setShowRoleOptions} />
-            <main onClick={() => setShowRoleOptions(false)}>
+            <Header />
+            <main>
                 <div className="w-[1200px] flex flex-col items-center">
 
-                    <AdvertismentSection setShowRoleOptions={setShowRoleOptions} />
+                    <AdvertismentSection />
 
-                    <section onClick={() => setShowRoleOptions(false)} className="p-[100px_90px] mt-[68px] bg-[rgba(0,21,25,1)] rounded-[18px] flex gap-[60px]">
+                    <section className="p-[100px_90px] mt-[68px] bg-[rgba(0,21,25,1)] rounded-[18px] flex gap-[60px]">
 
                         <MissionCard imgSrc="/images/landingIcons/Rectangle 84.svg" value="ნატურალური ინგრედიენტები, მრავალფეროვანი გემოები და გამორჩეული ტექსტურა — ნაყინი, რომელიც სიამოვნებას მოგანიჭებთ." title="ჩვენი პროდუქცია" />
 

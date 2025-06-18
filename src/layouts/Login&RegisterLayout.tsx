@@ -7,7 +7,8 @@ export default function LoginRegisterLayout() {
 
     const { register, watch, reset } = useForm<TRegisterOrLogin>({
         defaultValues: {
-            emailOrPhone: "",
+            name: "",
+            email: "",
             password: ""
         }
     })

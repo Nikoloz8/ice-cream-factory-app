@@ -7,7 +7,8 @@ type TInfoCard = {
 }
 
 type TRegisterOrLogin = {
-    emailOrPhone: number | string,
+    name: string
+    email: number | string,
     password: string
 }
 

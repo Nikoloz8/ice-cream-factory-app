@@ -71,15 +71,15 @@ const router = createBrowserRouter([
   },
   {
     element: <LoginRegisterLayout />,
-    path: "/login&register",
+    path: "/login_register",
     children: [
       {
         element: <Register />,
-        path: "/login&register/register/:role"
+        path: "/login_register/register"
       },
       {
         element: <Login />,
-        path: "/login&register/login/:role"
+        path: "/login_register/login"
       }
     ]
   }

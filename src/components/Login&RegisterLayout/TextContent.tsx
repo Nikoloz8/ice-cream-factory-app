@@ -6,7 +6,7 @@ export default function TextContent({ title, value }: TTextContent) {
     const navigate = useNavigate()
     const location = useLocation()
 
-    const { clearErrors } = useOutletContext<TFormFunctions>()
+    const { clearErrors, reset } = useOutletContext<TFormFunctions>()
 
     const isRegister = location.pathname.includes("/login_register/register")
     const isLogin = location.pathname.includes("/login_register/login")
@@ -20,6 +20,7 @@ export default function TextContent({ title, value }: TTextContent) {
                 <span className="font-[300]">ან</span>
                 <a href="#" className="hover:underline cursor-pointer" onClick={() => {
                     clearErrors()
+                    reset()
                     isLogin ? navigate(`/login_register/register`) : isRegister ? navigate(`/login_register/login`) : ""
                 }}>{value}</a>
             </h4>

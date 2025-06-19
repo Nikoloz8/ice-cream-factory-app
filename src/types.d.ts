@@ -16,6 +16,9 @@ type TFormFunctions = {
     register: UseFormRegister<TRegisterOrLogin>
     watch: UseFormWatch<TRegisterOrLogin>
     reset: UseFormReset<TRegisterOrLogin>
+    handleSubmit: UseFormHandleSubmit<TRegisterOrLogin, TRegisterOrLogin>
+    errors: FieldErrors<TRegisterOrLogin>
+    clearErrors: UseFormClearErrors<TRegisterOrLogin>
 }
 
 type TTextContent = {

@@ -5,7 +5,7 @@ import type { TRegisterOrLogin } from "../types";
 
 export default function LoginRegisterLayout() {
 
-    const { register, watch, reset } = useForm<TRegisterOrLogin>({
+    const { register, watch, reset, handleSubmit, formState: { errors }, clearErrors } = useForm<TRegisterOrLogin>({
         defaultValues: {
             name: "",
             email: "",
@@ -13,11 +13,13 @@ export default function LoginRegisterLayout() {
         }
     })
 
+
+
     return (
         <div className="w-[100%] min-h-[100vh] h-[100%] bg-[rgba(248,231,243,1)] pb-[100px]">
             <Header />
             <div className="w-[100%] flex justify-center">
-                <Outlet context={{register, watch, reset}}/>
+                <Outlet context={{ register, watch, reset, errors, handleSubmit, clearErrors }} />
             </div>
         </div>
     )

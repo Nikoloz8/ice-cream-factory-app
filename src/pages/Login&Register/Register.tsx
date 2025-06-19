@@ -1,6 +1,5 @@
 import LoginAndRegisterForm from "../../components/Login&RegisterLayout/Register&LoginForm"
 import TextContent from "../../components/Login&RegisterLayout/TextContent"
-import Button from "../../components/Login&RegisterLayout/Button"
 
 export default function Register() {
 
@@ -10,8 +9,6 @@ export default function Register() {
             <TextContent title="რეგისტრაცია" value="გაიარე ავტორიზაცია" />
 
             <LoginAndRegisterForm />
-
-            <Button value="რეგისტრაცია" />
 
         </div>
     )

@@ -2,18 +2,50 @@ import { useOutletContext } from 'react-router-dom'
 import type { TFormFunctions } from '../../types'
 import tailwind from '../../styles/tailwind'
 import Button from './Button'
-
-
+import axios from 'axios'
 
 export default function RegisterLoginForm() {
 
-    const { register, handleSubmit, errors } = useOutletContext<TFormFunctions>()
+    const { register, handleSubmit, errors, watch, reset } = useOutletContext<TFormFunctions>()
     const { inputStyle, F1 } = tailwind()
 
     const isRegister = location.pathname.includes("/login_register/register")
+    const isLogin = location.pathname.includes("/login_register/login")
+
+    const registerUser = async () => {
+        try {
+            console.log(watch())
+            const response = await axios.post("http://localhost:3001/api/v1/auth/signup", watch())
+            console.log("Submitted values:", watch());
+            console.log(response.data)
+            reset()
+        }
+        catch (e) {
+            console.error(e)
+        }
+    }
+
+    const loginUser = async () => {
+        try {
+            const res = await axios.post("http://localhost:3001/api/v1/auth/signin", {
+                email: watch().email,
+                password: watch().password
+            })
+            reset()
+            console.log("Logged in successfully!", res.data);
+            console.log(res.data.token)
+            localStorage.setItem("token", res.data.token);
+
+        } catch (e) {
+            console.error("Login failed:", e);
+        }
+    }
+
 
     return (
-        <form action="" onSubmit={handleSubmit()} className="flex flex-col gap-[20px]">
+        <form action="" onSubmit={handleSubmit(() => {
+            isLogin ? loginUser() : isRegister ? registerUser() : undefined
+        })} className="flex flex-col gap-[20px]">
             {isRegister ?
                 <div className="flex flex-col gap-[8px]">
                     <div className='flex justify-between w-[100%]'>
